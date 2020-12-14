@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ProyectoFinal_Grupo7</string>
+    <string name="Splash">Imagen</string>
+    <string name="Splash1">Imagen1</string>
+
+    <string name="item1">Código QR</string>
+</resources>
