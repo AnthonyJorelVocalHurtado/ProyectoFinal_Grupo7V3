@@ -24,7 +24,7 @@ public class Facturas extends AppCompatActivity {
     ///metodo para mostar el menu
     public boolean onCreateOptionsSelected(Menu menu)
     {
-        getMenuInflater().inflate(R.menu.overflow_codigoqr,menu);
+        getMenuInflater().inflate(R.menu.overflow,menu);
         return  true;
     }
 

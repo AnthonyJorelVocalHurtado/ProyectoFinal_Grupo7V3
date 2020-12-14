@@ -34,7 +34,9 @@ public class MainActivity extends AppCompatActivity {
         int id=item.getItemId();
         if(id==R.id.item4)
         {
-            Toast.makeText(this,"Escanear Codigo Qr",Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(this,"Escanear Codigo Qr",Toast.LENGTH_SHORT).show();
+            Intent in = new Intent(this,Escanear_CodigoQR.class);
+            startActivity(in);
         }
         if(id==R.id.item2)
         {
