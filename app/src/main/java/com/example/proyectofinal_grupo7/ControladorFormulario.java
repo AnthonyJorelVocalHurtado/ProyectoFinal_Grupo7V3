@@ -16,7 +16,6 @@ public class ControladorFormulario {
         contentValues.put("nombre",formulario.getNombre());
         contentValues.put("mes",formulario.getMes());
         contentValues.put("anio",formulario.getAnio());
-        contentValues.put("estado",formulario.getEstado());
         return sqLiteDatabase.insert(ayudanteFormulario.getNombreTabla(),null,contentValues);
     }
 }

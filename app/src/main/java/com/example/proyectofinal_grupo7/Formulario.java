@@ -7,11 +7,10 @@ public class Formulario {
     public Formulario() {
     }
 
-    public Formulario(String nombre, String mes, int anio, int estado) {
+    public Formulario(String nombre, String mes, int anio) {
         this.nombre = nombre;
         this.mes = mes;
         this.anio = anio;
-        this.estado = estado;
     }
 
     public Formulario(String nombre, String mes, int id, int anio, int estado) {

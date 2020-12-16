@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ActivityFormulario"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:background="#4B5863">
     <TextView
         android:id="@+id/tvTituloForm"
         android:layout_width="match_parent"
@@ -15,6 +16,12 @@
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/logoscreen" />
 
     <EditText
         android:id="@+id/etNombre"
@@ -40,15 +47,6 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Ingrese un Año .."
-        android:inputType="number"
-        android:textAlignment="center" />
-
-    <EditText
-        android:id="@+id/etEstado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Ingrese un Estado"
         android:inputType="number"
         android:textAlignment="center" />
 

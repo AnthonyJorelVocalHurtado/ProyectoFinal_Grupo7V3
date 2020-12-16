@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.proyectofinal_grupo7">
+
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -10,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFinal_Grupo7">
-        <activity android:name=".Escanear_CodigoQR"></activity>
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".Escanear_CodigoQR" />
         <activity android:name=".Facturas" />
         <activity android:name=".ActivityFormulario" />
         <activity android:name=".MainActivityInfo" />

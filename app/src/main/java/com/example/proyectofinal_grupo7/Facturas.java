@@ -7,9 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class Facturas extends AppCompatActivity {
-    Toolbar toolbar2;
+    private Toolbar toolbar2;
+    private Button btnManual,btnQr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,8 +22,23 @@ public class Facturas extends AppCompatActivity {
         //overflow
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        btnManual=findViewById(R.id.btnManual);
+        btnQr=findViewById(R.id.btnQr);
+        btnManual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(Facturas.this,MainActivity2.class);
+                startActivity(in);
+            }
+        });
+        btnQr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(Facturas.this,Escanear_CodigoQR.class);
+                startActivity(in);
+            }
+        });
     }
-
     ///metodo para mostar el menu
     public boolean onCreateOptionsSelected(Menu menu)
     {

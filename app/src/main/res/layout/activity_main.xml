@@ -19,4 +19,15 @@
         app:subtitle="ANL@gmail.com"
         app:subtitleTextColor="#D5CCCC"/>
 
+    <Button
+        android:id="@+id/btnListaFacturas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VER LISTA FACTURAS" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListaFormularios"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </LinearLayout>

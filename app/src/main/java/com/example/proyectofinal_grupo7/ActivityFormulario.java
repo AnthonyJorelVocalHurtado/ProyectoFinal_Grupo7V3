@@ -18,7 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class ActivityFormulario extends AppCompatActivity {
-    private EditText etNombre, etMes, etAnio, etEstado;
+    private EditText etNombre, etMes, etAnio;
     private FloatingActionButton btnAgregar;
     private RecyclerView rvFormulario;
     private ControladorFormulario controladorFormulario;
@@ -33,9 +33,11 @@ public class ActivityFormulario extends AppCompatActivity {
         etNombre=findViewById(R.id.etNombre);
         etMes=findViewById(R.id.etMes);
         etAnio=findViewById(R.id.etAño);
-        etEstado=findViewById(R.id.etEstado);
         btnAgregar=findViewById(R.id.btnAgregar);
         rvFormulario=findViewById(R.id.rvFormulario);
+        //rv Dos
+        //rvListaFormularios=findViewById(R.id.rvListaFormularios);
+        //rvListaFormularios.setLayoutManager(new GridLayoutManager(getApplicationContext(), 1));
         rvFormulario.setLayoutManager(new GridLayoutManager(this,1));
         listaFormulario = new ArrayList<Formulario>();
         controladorFormulario = new ControladorFormulario(ActivityFormulario.this);
@@ -44,7 +46,6 @@ public class ActivityFormulario extends AppCompatActivity {
         //cargar al recyclerView
         cargarFormularioSQLite();
         rvFormulario.setAdapter(adaptador);
-
         adaptador.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +58,7 @@ public class ActivityFormulario extends AppCompatActivity {
                 String nombreString = etNombre.getText().toString().trim();
                 String mesString = etMes.getText().toString().trim();
                 String anioString = etAnio.getText().toString().trim();
-                String estadoString = etEstado.getText().toString().trim();
+                //String estadoString = etEstado.getText().toString().trim();
                 if (nombreString.equals("")) {
                     etNombre.setError("Inserta un nombre");
                     etNombre.requestFocus();
@@ -73,14 +74,8 @@ public class ActivityFormulario extends AppCompatActivity {
                     etAnio.requestFocus();
                     return;
                 }
-                if (estadoString.equals("")) {
-                    etAnio.setError("Inserta un Estado");
-                    etAnio.requestFocus();
-                    return;
-                }
                 int anioInt = Integer.parseInt(anioString);
-                int estadoInt=Integer.parseInt(estadoString);
-                formulario = new Formulario(nombreString,mesString,anioInt,estadoInt);
+                formulario = new Formulario(nombreString,mesString,anioInt);
                 long resultado = controladorFormulario.insertarFormulario(formulario);
                 if (resultado==-1){
                     Toast.makeText(getApplicationContext(),"Error al insertar", Toast.LENGTH_LONG).show();
@@ -92,7 +87,6 @@ public class ActivityFormulario extends AppCompatActivity {
                     etNombre.setText("");
                     etMes.setText("");
                     etAnio.setText("");
-                    etEstado.setText("");
                 }
             }
         });

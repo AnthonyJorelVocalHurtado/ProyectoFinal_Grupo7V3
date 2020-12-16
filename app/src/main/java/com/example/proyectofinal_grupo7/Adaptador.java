@@ -60,8 +60,8 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolder> implem
         TextView tvID, tvNombre, tvMes, tvAnio, tvEstado;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvID=itemView.findViewById(R.id.tvID);
-            tvNombre=itemView.findViewById(R.id.tvNombre);
+            tvID=itemView.findViewById(R.id.tvNroFacturaF);
+            tvNombre=itemView.findViewById(R.id.tvNroAutorizacion);
             tvMes=itemView.findViewById(R.id.tvMes);
             tvAnio=itemView.findViewById(R.id.tvAño);
             tvEstado=itemView.findViewById(R.id.tvEstado);

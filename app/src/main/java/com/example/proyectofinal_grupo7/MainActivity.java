@@ -3,25 +3,41 @@ package com.example.proyectofinal_grupo7;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
+    RecyclerView rvListaFormularios;
+    Button btnListaFacturas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = findViewById(R.id.toolbar);
+        rvListaFormularios = findViewById(R.id.rvListaFormularios);
+        btnListaFacturas=findViewById(R.id.btnListaFacturas);
         setSupportActionBar(toolbar);
         //overflow
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        btnListaFacturas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent o = new Intent(MainActivity.this,Facturas.class);
+                startActivity(o);
+            }
+        });
     }
     //metodo para mostrar y ocultar el menu
     public boolean onCreateOptionsMenu(Menu menu){
